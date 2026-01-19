@@ -1,0 +1,8 @@
+[build]
+  command = "cd crm-frontend && npm run build"
+  publish = "crm-frontend/dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
