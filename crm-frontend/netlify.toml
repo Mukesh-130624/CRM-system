@@ -1,6 +1,7 @@
 [build]
+  base = "crm-frontend"
   command = "npm run build"
-  publish = "dist"
+  publish = "crm-frontend/dist"
 
 [dev]
   command = "npm run dev"
