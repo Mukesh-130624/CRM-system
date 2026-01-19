@@ -1,3 +1,3 @@
-import api from "./axios";
+import axiosPrivate from "./axiosPrivate";
 
-export const getCustomers = () => api.get("customers/");
+export const getCustomers = () => axiosPrivate.get("customers/");

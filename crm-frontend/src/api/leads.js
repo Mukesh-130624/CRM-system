@@ -1,10 +1,10 @@
-import api from "./axios";
+import axiosPrivate from "./axiosPrivate";
 
-export const getLeads = () => api.get("leads/");
-// src/api/leads.js
+export const getLeads = () => axiosPrivate.get("leads/");
+
 export const createLead = async (data) => {
     try {
-        const res = await api.post("/leads/", data);
+        const res = await axiosPrivate.post("leads/", data);
         return { success: true, data: res.data };
     } catch (err) {
         return {
@@ -17,6 +17,11 @@ export const createLead = async (data) => {
     }
 };
 
-export const updateLead = (id, data) => api.patch(`leads/${id}/`, data);
-export const deleteLead = (id) => api.delete(`leads/${id}/`);
-export const convertLead = (id) => api.post(`leads/${id}/convert/`);
+export const updateLead = (id, data) =>
+    axiosPrivate.patch(`leads/${id}/`, data);
+
+export const deleteLead = (id) =>
+    axiosPrivate.delete(`leads/${id}/`);
+
+export const convertLead = (id) =>
+    axiosPrivate.post(`leads/${id}/convert/`);

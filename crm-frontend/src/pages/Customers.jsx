@@ -14,13 +14,28 @@ export default function Customers() {
             <Navbar />
             <h2>Customers</h2>
 
-            <ul>
-                {customers.map((c) => (
-                    <li key={c.id}>
-                        {c.name} – {c.email}
-                    </li>
-                ))}
-            </ul>
+            <table border="1" cellPadding="8">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Company</th>
+                        <th>Owner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {customers.map((c) => (
+                        <tr key={c.id}>
+                            <td>{c.name}</td>
+                            <td>{c.email}</td>
+                            <td>{c.phone}</td>
+                            <td>{c.company || "-"}</td>
+                            <td>{c.owner}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </>
     );
 }
